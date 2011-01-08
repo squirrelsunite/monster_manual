@@ -1,0 +1,43 @@
+<h1>Listing monsters</h1>
+
+<table>
+  <tr>
+    <th>Strength</th>
+    <th>Dexterity</th>
+    <th>Constitution</th>
+    <th>Intelligence</th>
+    <th>Wisdom</th>
+    <th>Charisma</th>
+    <th>Hit points</th>
+    <th>Armor class</th>
+    <th>Fortitude</th>
+    <th>Reflex</th>
+    <th>Will</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @monsters.each do |monster| %>
+  <tr>
+    <td><%= monster.strength %></td>
+    <td><%= monster.dexterity %></td>
+    <td><%= monster.constitution %></td>
+    <td><%= monster.intelligence %></td>
+    <td><%= monster.wisdom %></td>
+    <td><%= monster.charisma %></td>
+    <td><%= monster.hit_points %></td>
+    <td><%= monster.armor_class %></td>
+    <td><%= monster.fortitude %></td>
+    <td><%= monster.reflex %></td>
+    <td><%= monster.will %></td>
+    <td><%= link_to 'Show', monster %></td>
+    <td><%= link_to 'Edit', edit_monster_path(monster) %></td>
+    <td><%= link_to 'Destroy', monster, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Monster', new_monster_path %>

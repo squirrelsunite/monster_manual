@@ -1,0 +1,61 @@
+<%= form_for(@monster) do |f| %>
+  <% if @monster.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@monster.errors.count, "error") %> prohibited this monster from being saved:</h2>
+
+      <ul>
+      <% @monster.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :strength %><br />
+    <%= f.text_field :strength %>
+  </div>
+  <div class="field">
+    <%= f.label :dexterity %><br />
+    <%= f.text_field :dexterity %>
+  </div>
+  <div class="field">
+    <%= f.label :constitution %><br />
+    <%= f.text_field :constitution %>
+  </div>
+  <div class="field">
+    <%= f.label :intelligence %><br />
+    <%= f.text_field :intelligence %>
+  </div>
+  <div class="field">
+    <%= f.label :wisdom %><br />
+    <%= f.text_field :wisdom %>
+  </div>
+  <div class="field">
+    <%= f.label :charisma %><br />
+    <%= f.text_field :charisma %>
+  </div>
+  <div class="field">
+    <%= f.label :hit_points %><br />
+    <%= f.text_field :hit_points %>
+  </div>
+  <div class="field">
+    <%= f.label :armor_class %><br />
+    <%= f.text_field :armor_class %>
+  </div>
+  <div class="field">
+    <%= f.label :fortitude %><br />
+    <%= f.text_field :fortitude %>
+  </div>
+  <div class="field">
+    <%= f.label :reflex %><br />
+    <%= f.text_field :reflex %>
+  </div>
+  <div class="field">
+    <%= f.label :will %><br />
+    <%= f.text_field :will %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

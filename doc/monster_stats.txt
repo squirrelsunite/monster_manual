@@ -1,0 +1,43 @@
+monster
+  strength
+  dexterity
+  constitution
+  intelligence
+  wisdom
+  charisma
+  hit_points
+  armor_class
+  reflex
+  fortitude
+  will
+  [speed]
+  [basic melee attack]
+  [basic ranged attack]
+  [race]
+  [role]
+  [* special attacks]
+  [* movement types]
+  [* special properties]
+
+attack
+  type : meleee, ranged, blast, burst, etc. 
+  range
+  to_hit
+  damage
+  [* effects]
+
+speed
+  movement_type
+  value
+
+race
+  name
+
+role
+  name
+
+property
+  name
+
+effect
+  name

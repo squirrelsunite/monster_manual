@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Strength:</b>
+  <%= @monster.strength %>
+</p>
+
+<p>
+  <b>Dexterity:</b>
+  <%= @monster.dexterity %>
+</p>
+
+<p>
+  <b>Constitution:</b>
+  <%= @monster.constitution %>
+</p>
+
+<p>
+  <b>Intelligence:</b>
+  <%= @monster.intelligence %>
+</p>
+
+<p>
+  <b>Wisdom:</b>
+  <%= @monster.wisdom %>
+</p>
+
+<p>
+  <b>Charisma:</b>
+  <%= @monster.charisma %>
+</p>
+
+<p>
+  <b>Hit points:</b>
+  <%= @monster.hit_points %>
+</p>
+
+<p>
+  <b>Armor class:</b>
+  <%= @monster.armor_class %>
+</p>
+
+<p>
+  <b>Fortitude:</b>
+  <%= @monster.fortitude %>
+</p>
+
+<p>
+  <b>Reflex:</b>
+  <%= @monster.reflex %>
+</p>
+
+<p>
+  <b>Will:</b>
+  <%= @monster.will %>
+</p>
+
+
+<%= link_to 'Edit', edit_monster_path(@monster) %> |
+<%= link_to 'Back', monsters_path %>

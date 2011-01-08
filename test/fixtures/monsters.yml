@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  strength: 1
+  dexterity: 1
+  constitution: 1
+  intelligence: 1
+  wisdom: 1
+  charisma: 1
+  hit_points: 1
+  armor_class: 1
+  fortitude: 1
+  reflex: 1
+  will: 1
+
+two:
+  strength: 1
+  dexterity: 1
+  constitution: 1
+  intelligence: 1
+  wisdom: 1
+  charisma: 1
+  hit_points: 1
+  armor_class: 1
+  fortitude: 1
+  reflex: 1
+  will: 1
