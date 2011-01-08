@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Name</th>
     <th>Strength</th>
     <th>Dexterity</th>
     <th>Constitution</th>
@@ -20,6 +21,7 @@
 
 <% @monsters.each do |monster| %>
   <tr>
+    <td><%= monster.name %></td>
     <td><%= monster.strength %></td>
     <td><%= monster.dexterity %></td>
     <td><%= monster.constitution %></td>
