@@ -1,0 +1,14 @@
+add column
+  migration
+    "rails g migration NAME_OF_MIGRATION THING:TYPE"
+    g = generate
+    NAME_OF_MIGRATION e.g. add_size_to_monster // rename_monster_to_creature
+    THING e.g size // name 
+    TYPE e.g string // integer // text
+  rake db:migrate
+    applies migration
+  Add field to _form
+   e.g f.label // f.select // f.text_field // f.text_area
+  Add def options of select to model 
+   e.g tiny, huge for size
+  Add column title to show and index

@@ -1,44 +1,27 @@
-<h1>Listing monsters</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Strength</th>
-    <th>Dexterity</th>
-    <th>Constitution</th>
-    <th>Intelligence</th>
-    <th>Wisdom</th>
-    <th>Charisma</th>
-    <th>Hit points</th>
-    <th>Armor class</th>
-    <th>Fortitude</th>
-    <th>Reflex</th>
-    <th>Will</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h1>Monster Index</h1>
 
 <% @monsters.each do |monster| %>
-  <tr>
-    <td><%= monster.name %></td>
-    <td><%= monster.strength %></td>
-    <td><%= monster.dexterity %></td>
-    <td><%= monster.constitution %></td>
-    <td><%= monster.intelligence %></td>
-    <td><%= monster.wisdom %></td>
-    <td><%= monster.charisma %></td>
-    <td><%= monster.hit_points %></td>
-    <td><%= monster.armor_class %></td>
-    <td><%= monster.fortitude %></td>
-    <td><%= monster.reflex %></td>
-    <td><%= monster.will %></td>
-    <td><%= link_to 'Show', monster %></td>
-    <td><%= link_to 'Edit', edit_monster_path(monster) %></td>
-    <td><%= link_to 'Destroy', monster, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+
+<p><h3><%= monster.name %></h3></p>
+<p>Level <%= monster.level %>
+    <%= link_to monster.primary_role.name, monster.primary_role %></p>
+<p><%= monster.size %>
+    <%= link_to monster.origin.name, monster.origin %>
+    <%= link_to monster.type.name, monster.type %></p>
+<p>Hit Points <%= monster.hit_points %>,
+Init Bonus <%= monster.initiative %></p>
+<p>AC <%= monster.armor_class %>,
+Fort <%= monster.fortitude %>,
+Ref <%= monster.reflex %>,
+Will <%= monster.will %></p>
+
+    <%= link_to 'Details', monster %>
+    <%= link_to 'Edit', edit_monster_path(monster) %>
+    <%= link_to 'Delete', monster, :confirm => 'Are you sure?', :method => :delete %>
+<br />
+__________________________________________
+<br />
 <% end %>
-</table>
 
 <br />
 

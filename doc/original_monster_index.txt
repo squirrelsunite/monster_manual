@@ -1,0 +1,61 @@
+<h1>Listing monsters</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Level</th>
+    <th>Role</th>
+    <th>Size</th>
+    <th>Origin</th>
+    <th>Type</th>
+    <th>Hit points</th>
+    <th>Bloodied</th>
+    <th>Initiative</th>
+    <th>Armor class</th>
+    <th>Fortitude</th>
+    <th>Reflex</th>
+    <th>Will</th>
+    <th>Perception</th>
+    <th>Strength</th>
+    <th>Dexterity</th>
+    <th>Wisdom</th>
+    <th>Constitution</th>
+    <th>Intelligence</th>
+    <th>Charisma</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @monsters.each do |monster| %>
+  <tr>
+    <td><%= monster.name %></td>
+    <td><%= monster.level %></td>
+    <td><%= link_to monster.primary_role.name, monster.primary_role %></td>
+    <td><%= monster.size %></td>
+    <td><%= link_to monster.origin.name, monster.origin %></td>
+    <td><%= link_to monster.type.name, monster.type %></td>
+    <td><%= monster.hit_points %></td>
+    <td><%= monster.bloodied %></td>
+    <td><%= monster.initiative %></td>
+    <td><%= monster.armor_class %></td>
+    <td><%= monster.fortitude %></td>
+    <td><%= monster.reflex %></td>
+    <td><%= monster.will %></td>
+    <td><%= monster.perception %></td>
+    <td><%= monster.strength %></td>
+    <td><%= monster.dexterity %></td>
+    <td><%= monster.wisdom %></td>
+    <td><%= monster.constitution %></td>
+    <td><%= monster.intelligence %></td>
+    <td><%= monster.charisma %></td>
+    <td><%= link_to 'Show', monster %></td>
+    <td><%= link_to 'Edit', edit_monster_path(monster) %></td>
+    <td><%= link_to 'Delete', monster, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Monster', new_monster_path %>

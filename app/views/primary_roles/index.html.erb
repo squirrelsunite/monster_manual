@@ -1,0 +1,19 @@
+<h1>Primary Roles</h1>
+
+<% @primary_roles.each do |primary_role| %>
+
+<p><h3><%= primary_role.name %></h3></p>
+<p><%= truncate primary_role.description, :length => 50 %></p>
+    
+    <%= link_to 'Details', primary_role %>
+    <%= link_to 'Edit', edit_primary_role_path(primary_role) %>
+    <%= link_to 'Delete', primary_role, :confirm => 'Are you sure?', :method => :delete %>
+<br />
+__________________________________________
+<br />
+<% end %>
+
+
+<br />
+
+<%= link_to 'New Primary role', new_primary_role_path %>

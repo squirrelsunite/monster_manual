@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p><h3><%= @primary_role.name %></h3></p>
+
+<p><%= @primary_role.description %></p>
+
+<% if @primary_role.monsters.any?%>
+  <h4>Monsters</h4>
+  <ul>
+    <% @primary_role.monsters.each do |monster| %>
+      <li><%= link_to monster.name, monster %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= link_to 'Index', primary_roles_path %> |
+<%= link_to 'Edit', edit_primary_role_path(@primary_role) %>
+

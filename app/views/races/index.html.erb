@@ -1,0 +1,18 @@
+<h1>Race Index</h1>
+
+<% @races.each do |race| %>
+<p><h3><%= race.name %></h3></p>
+<p><%= truncate race.description, :length => 50 %></p>
+
+    <%= link_to 'Details', race %>
+    <%= link_to 'Edit', edit_race_path(race) %>
+    <%= link_to 'Delete', race, :confirm => 'Are you sure?', :method => :delete %>
+<br />
+__________________________________________
+<br />
+<% end %>
+
+
+<br />
+
+<%= link_to 'New Race', new_race_path %>

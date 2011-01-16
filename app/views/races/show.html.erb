@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p><h3><%= @race.name %></h3></p>
+
+<p><%= @race.description %></p>
+
+<p><b><%= @race.skill%> DC <%= @race.difficulty%>: </b><%= @race.lore %></p>
+
+<p><b>Encounters: </b><%= @race.encounters %></p>
+
+<% if @race.monsters.any?%>
+  <h4>Monsters</h4>
+  <ul>
+    <% @race.monsters.each do |monster| %>
+      <li><%= link_to monster.name, monster %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= link_to 'Index', races_path %> |
+<%= link_to 'Edit', edit_race_path(@race) %>
+

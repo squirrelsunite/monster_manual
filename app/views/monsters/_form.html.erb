@@ -16,32 +16,39 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :strength %><br />
-    <%= f.text_field :strength %>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  <div class="field">
+    <%= f.label :level %><br />
+    <%= f.text_field :level %>
   </div>
   <div class="field">
-    <%= f.label :dexterity %><br />
-    <%= f.text_field :dexterity %>
+    <%= f.label :primary_role %><br />
+    <%= f.collection_select :primary_role_id, PrimaryRole.all, :id, :name %>
   </div>
   <div class="field">
-    <%= f.label :constitution %><br />
-    <%= f.text_field :constitution %>
+    <%= f.label :size %><br />
+    <%= f.select :size, Monster.sizes %>
   </div>
   <div class="field">
-    <%= f.label :intelligence %><br />
-    <%= f.text_field :intelligence %>
+    <%= f.label :origin %><br />
+    <%= f.collection_select :origin_id, Origin.all, :id, :name %>
   </div>
   <div class="field">
-    <%= f.label :wisdom %><br />
-    <%= f.text_field :wisdom %>
+    <%= f.label :type %><br />
+    <%= f.collection_select :type_id, Type.all, :id, :name %>
   </div>
   <div class="field">
-    <%= f.label :charisma %><br />
-    <%= f.text_field :charisma %>
+    <%= f.label :race %><br />
+    <%= f.collection_select :race_id, Race.find(:all, :order => "name"), :id, :name %>
   </div>
   <div class="field">
     <%= f.label :hit_points %><br />
     <%= f.text_field :hit_points %>
+  </div>
+  <div class="field">
+    <%= f.label :initiave %><br />
+    <%= f.text_field :initiative %>
   </div>
   <div class="field">
     <%= f.label :armor_class %><br />
@@ -58,6 +65,58 @@
   <div class="field">
     <%= f.label :will %><br />
     <%= f.text_field :will %>
+  </div>
+  <div class="field">
+    <%= f.label :perception %><br />
+    <%= f.text_field :perception %>
+  </div>
+  <div class="field">
+    <%= f.label :speed %><br />
+    <%= f.text_field :speed %>
+  </div>
+  <div class="field">
+    <%= f.label :movement_type %><br />
+    <%= f.select :movement_type, Monster.movement_types %>
+  </div>
+  <div class="field">
+    <%= f.label :special_sense %><br />
+    <%= f.select :special_sense, Monster.special_senses %>
+  </div>
+  <div class="field">
+    <%= f.label :strength %><br />
+    <%= f.text_field :strength %>
+  </div>
+  <div class="field">
+    <%= f.label :dexterity %><br />
+    <%= f.text_field :dexterity %>
+  </div>
+  <div class="field">
+     <%= f.label :wisdom %><br />
+     <%= f.text_field :wisdom %>
+  </div>
+  <div class="field">
+    <%= f.label :constitution %><br />
+    <%= f.text_field :constitution %>
+  </div>
+  <div class="field">
+    <%= f.label :intelligence %><br />
+    <%= f.text_field :intelligence %>
+  </div>
+  <div class="field">
+    <%= f.label :charisma %><br />
+    <%= f.text_field :charisma %>
+  </div>
+  <div class="field">
+    <%= f.label :alignment %><br />
+    <%= f.select :alignment, Monster.alignment %>
+  </div>
+  <div class="field">
+    <%= f.label :languages %><br />
+    <%= f.select :languages, Monster.languages %>
+  </div>
+  <div class="field">
+    <%= f.label :combat_notes %><br />
+    <%= f.text_area :combat_notes %>
   </div>
   <div class="actions">
     <%= f.submit %>

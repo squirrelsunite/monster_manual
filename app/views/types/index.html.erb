@@ -1,0 +1,19 @@
+<h1>Listing types</h1>
+
+<% @types.each do |type| %>
+<p><h3><%= type.name %></h3></p>
+<p><%= truncate type.description, :length => 50 %></p>
+
+    <%= link_to 'Details', type %>
+    <%= link_to 'Edit', edit_type_path(type) %>
+    <%= link_to 'Delete', type, :confirm => 'Are you sure?', :method => :delete %>
+
+<br />
+__________________________________________
+<br />
+<% end %>
+
+
+<br />
+
+<%= link_to 'New Type', new_type_path %>

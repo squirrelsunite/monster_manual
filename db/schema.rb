@@ -10,10 +10,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110108212749) do
+ActiveRecord::Schema.define(:version => 20110115193156) do
+
+  create_table "keywords", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "keywords_monsters", :id => false, :force => true do |t|
+    t.integer "keyword_id"
+    t.integer "monster_id"
+  end
 
   create_table "monsters", :force => true do |t|
-    t.string   "name"
     t.integer  "strength"
     t.integer  "dexterity"
     t.integer  "constitution"
@@ -27,7 +38,55 @@ ActiveRecord::Schema.define(:version => 20110108212749) do
     t.integer  "will"
     t.datetime "created_at"
     t.datetime "updated_at"
-    
+    t.string   "name"
+    t.integer  "origin_id"
+    t.string   "size"
+    t.integer  "level"
+    t.string   "primary_role"
+    t.integer  "initiative"
+    t.integer  "type_id"
+    t.integer  "perception"
+    t.integer  "race_id"
+    t.integer  "speed"
+    t.string   "special_sense"
+    t.integer  "primary_role_id"
+    t.text     "combat_notes"
+    t.text     "description"
+    t.string   "movement_type"
+    t.string   "alignment"
+    t.string   "languages"
+  end
+
+  create_table "origins", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "primary_roles", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "races", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "lore"
+    t.text     "encounters"
+    t.string   "skill"
+    t.integer  "difficulty"
+  end
+
+  create_table "types", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

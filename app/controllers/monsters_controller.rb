@@ -44,7 +44,7 @@ class MonstersController < ApplicationController
 
     respond_to do |format|
       if @monster.save
-        format.html { redirect_to(@monster, :notice => 'Monster was successfully created.') }
+        format.html { redirect_to(monsters_path, :notice => 'Monster was successfully created.') }
         format.xml  { render :xml => @monster, :status => :created, :location => @monster }
       else
         format.html { render :action => "new" }

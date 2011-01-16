@@ -13,23 +13,42 @@ monster
   [speed]
   [basic melee attack]
   [basic ranged attack]
+  [size]
+  [origin]
   [race]
+  [* keywords]
   [role]
   [* special attacks]
   [* movement types]
   [* special properties]
+  [* traits]
 
-attack
+actions
+  standard
+  minor
+  move
+  immediate
+  reaction
+  
+attacks (kind of action)
   type : meleee, ranged, blast, burst, etc. 
   range
   to_hit
   damage
   [* effects]
 
+traits
+  auras
+
+origin
+  name
+  description
+  
 speed
   movement_type
   value
-
+  **Attributes such as clumsy, earth walk?
+  
 race
   name
 
@@ -41,3 +60,6 @@ property
 
 effect
   name
+  
+**Conditions?
+**Init/HP tracker?

@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p><h3><%= @type.name %></h3></p>
+
+<p><%= @type.description %></p>
+
+<% if @type.monsters.any?%>
+  <h4>Monsters</h4>
+  <ul>
+    <% @type.monsters.each do |monster| %>
+      <li><%= link_to monster.name, monster %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= link_to 'Index', types_path %> |
+<%= link_to 'Edit', edit_type_path(@type) %>
+

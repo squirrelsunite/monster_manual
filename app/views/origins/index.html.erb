@@ -1,0 +1,20 @@
+<h1>Origin Index</h1>
+<p class="notice">
+  <%= flash[:notice] %>
+</p>
+
+<% @origins.each do |origin| %>
+<p><h3><%= origin.name %></h3></p>
+<p><%= truncate origin.description, :length => 50 %></p>
+
+    <%= link_to 'Details', origin %>
+    <%= link_to 'Edit', edit_origin_path(origin) %>
+    <%= link_to 'Delete', origin, :confirm => 'Are you sure?', :method => :delete %>
+
+<br />
+__________________________________________
+<br />
+<% end %>
+<br />
+
+<%= link_to 'New origin', new_origin_path %>

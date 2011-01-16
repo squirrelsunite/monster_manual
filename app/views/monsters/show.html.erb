@@ -6,33 +6,37 @@
 </p>
 
 <p>
-  <b>Strength:</b>
-  <%= @monster.strength %>
+  <%= @monster.description %>
 </p>
 
 <p>
-  <b>Dexterity:</b>
-  <%= @monster.dexterity %>
+  <b>Level:</b>
+  <%= @monster.level %>
 </p>
 
 <p>
-  <b>Constitution:</b>
-  <%= @monster.constitution %>
+  <b>Role:</b>
+  <%= link_to @monster.primary_role.name, @monster.primary_role %>
+</p>
+  
+<p>
+  <b>Size:</b>
+  <%= @monster.size %>
 </p>
 
 <p>
-  <b>Intelligence:</b>
-  <%= @monster.intelligence %>
+  <b>Origin:</b>
+  <%= link_to @monster.origin.name, @monster.origin %>
 </p>
 
 <p>
-  <b>Wisdom:</b>
-  <%= @monster.wisdom %>
+  <b>Type:</b>
+  <%= link_to @monster.type.name, @monster.type %>
 </p>
 
 <p>
-  <b>Charisma:</b>
-  <%= @monster.charisma %>
+  <b>Race:</b>
+  <%= link_to @monster.race.name, @monster.race %>
 </p>
 
 <p>
@@ -43,6 +47,11 @@
 <p>
   <b>Bloodied:</b>
   <%= @monster.bloodied %>
+</p>
+
+<p>
+  <b>Initiative:</b>
+  <%= @monster.initiative %>
 </p>
 
 <p>
@@ -65,6 +74,57 @@
   <%= @monster.will %>
 </p>
 
+<p>
+  <b>Perception:</b>
+  <%= @monster.perception %>
+</p>
 
+<p>
+  <b>Speed:</b>
+  <%= @monster.speed %>
+</p>
+
+<p>
+  <b>Special Senses:</b>
+  <%= @monster.special_sense %>
+</p>
+
+<p>
+  <b>Strength:</b>
+  <%= @monster.strength %>
+</p>
+
+<p>
+  <b>Dexterity:</b>
+  <%= @monster.dexterity %>
+</p>
+
+<p>
+  <b>Wisdom:</b>
+  <%= @monster.wisdom %>
+</p>
+
+<p>
+  <b>Constitution:</b>
+  <%= @monster.constitution %>
+</p>
+
+<p>
+  <b>Intelligence:</b>
+  <%= @monster.intelligence %>
+</p>
+
+<p>
+  <b>Charisma:</b>
+  <%= @monster.charisma %>
+</p>
+
+<p>
+  <b><%= @monster.name.pluralize %> in Combat:</b>
+  <%= @monster.combat_notes %>
+</p>
+
+<%= link_to 'Index', monsters_path %> |
 <%= link_to 'Edit', edit_monster_path(@monster) %> |
-<%= link_to 'Back', monsters_path %>
+<%= link_to 'Delete', @monster, :confirm => 'Are you sure?', :method => :delete %>
+

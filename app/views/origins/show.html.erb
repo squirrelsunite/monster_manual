@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p><h3><%= @origin.name %></h3></p>
+
+<p><%= @origin.description %></p>
+
+<% if @origin.monsters.any?%>
+  <h4>Monsters</h4>
+  <ul>
+    <% @origin.monsters.each do |monster| %>
+      <li><%= link_to monster.name, monster %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= link_to 'Index', origins_path %> |
+<%= link_to 'Edit', edit_origin_path(@origin) %> |
+<%= link_to 'Delete', @origin, :confirm => 'Are you sure?', :method => :delete%>
+
