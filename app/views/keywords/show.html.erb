@@ -4,5 +4,6 @@
 
 <p><%= @keyword.description %></p>
 
+<%= link_to 'Index', keywords_path %> |
 <%= link_to 'Edit', edit_keyword_path(@keyword) %> |
-<%= link_to 'Index', keywords_path %>
+<%= link_to 'Delete', @keyword, :confirm => 'Are you sure?', :method => :delete %>

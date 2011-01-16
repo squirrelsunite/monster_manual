@@ -14,5 +14,6 @@
 <% end %>
 
 <%= link_to 'Index', types_path %> |
-<%= link_to 'Edit', edit_type_path(@type) %>
+<%= link_to 'Edit', edit_type_path(@type) %> |
+<%= link_to 'Delete', @type, :confirm => 'Are you sure?', :method => :delete %>
 

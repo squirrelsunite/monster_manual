@@ -18,5 +18,6 @@
 <% end %>
 
 <%= link_to 'Index', races_path %> |
-<%= link_to 'Edit', edit_race_path(@race) %>
+<%= link_to 'Edit', edit_race_path(@race) %> |
+<%= link_to 'Delete', @race, :confirm => 'Are you sure?', :method => :delete %>
 

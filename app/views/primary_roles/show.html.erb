@@ -14,5 +14,6 @@
 <% end %>
 
 <%= link_to 'Index', primary_roles_path %> |
-<%= link_to 'Edit', edit_primary_role_path(@primary_role) %>
+<%= link_to 'Edit', edit_primary_role_path(@primary_role) %> |
+<%= link_to 'Delete', @primary_role, :confirm => 'Are you sure?', :method => :delete %>
 
