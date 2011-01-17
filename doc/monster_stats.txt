@@ -63,3 +63,4 @@ effect
   
 **Conditions?
 **Init/HP tracker?
+**Add "Create New" to the top of the index pages

@@ -1,0 +1,17 @@
+#nav {
+  background: black;
+  color: gray;
+  padding: 0.5em;
+}
+
+#nav a{
+  color: white;
+  text-decoration: none;
+}
+
+body {
+  margin: 0px;
+}
+#main {
+  padding-left: 1em;
+}

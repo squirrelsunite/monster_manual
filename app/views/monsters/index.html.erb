@@ -1,5 +1,7 @@
 <h1>Monster Index</h1>
 
+<%= link_to 'New Monster', new_monster_path %>  
+
 <% @monsters.each do |monster| %>
 
 <p><h3><%= monster.name %></h3></p>
