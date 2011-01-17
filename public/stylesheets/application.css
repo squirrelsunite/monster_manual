@@ -2,6 +2,10 @@
   background: black;
   color: gray;
   padding: 0.5em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 #nav a{
@@ -14,4 +18,5 @@ body {
 }
 #main {
   padding-left: 1em;
+  padding-top: 2em;
 }
