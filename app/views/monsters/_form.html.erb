@@ -40,7 +40,7 @@
   </div>
   <div class="field">
     <%= f.label :race %><br />
-    <%= f.collection_select :race_id, Race.find(:all, :order => "name"), :id, :name %>
+    <%= f.collection_select :race_id, Race.all, :id, :name %>
   </div>
   <div class="field">
     <%= f.label :hit_points %><br />

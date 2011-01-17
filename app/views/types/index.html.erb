@@ -1,5 +1,7 @@
 <h1>Listing types</h1>
 
+<%= link_to 'New Type', new_type_path %>
+
 <% @types.each do |type| %>
 <p><h3><%= type.name %></h3></p>
 <p><%= truncate type.description, :length => 50 %></p>

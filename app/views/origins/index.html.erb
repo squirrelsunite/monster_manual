@@ -3,6 +3,8 @@
   <%= flash[:notice] %>
 </p>
 
+<%= link_to 'New origin', new_origin_path %>
+
 <% @origins.each do |origin| %>
 <p><h3><%= origin.name %></h3></p>
 <p><%= truncate origin.description, :length => 50 %></p>

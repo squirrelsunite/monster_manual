@@ -1,5 +1,7 @@
 <h1>Race Index</h1>
 
+<%= link_to 'New Race', new_race_path %>
+
 <% @races.each do |race| %>
 <p><h3><%= race.name %></h3></p>
 <p><%= truncate race.description, :length => 50 %></p>
