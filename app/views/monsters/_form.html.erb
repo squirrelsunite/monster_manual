@@ -12,67 +12,70 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <b><%= f.label :name %></b><br />
+    <%= f.text_field :name, :size => 42 %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
+    <b><%= f.label :description %></b><br />
     <%= f.text_area :description %>
+<br /><br />
+  <table cellpadding="5">
+    <tr>
+      <th><%= f.label :level %> </th>
+      <th><%= f.label :primary_role %> </th>
+    </tr>
+    <tr>
+      <td><%= f.text_field :level, :size => 3 %> </td>
+      <td><%= f.collection_select :primary_role_id, PrimaryRole.all, :id, :name %> </td>
+    </tr>
+  </table>
+<br />
+  <table cellpadding="5">
+    <tr>
+      <th><%= f.label :size %> </th>
+      <th><%= f.label :origin %> </th>
+      <th><%= f.label :type %> </th>
+      <th><%= f.label :race %> </th>
+    </tr>
+    <tr>
+      <td><%= f.select :size, Monster.sizes %></td>
+      <td><%= f.collection_select :origin_id, Origin.all, :id, :name %> </td>
+      <td><%= f.collection_select :type_id, Type.all, :id, :name %> </td>
+      <td><%= f.collection_select :race_id, Race.all, :id, :name %> </td>
+    </tr>
+  </table>
+<br />
+
   <div class="field">
-    <%= f.label :level %><br />
-    <%= f.text_field :level %>
+    <b><%= f.label :hit_points %> </b>
+    <%= f.text_field :hit_points, :size => 8 %>
   </div>
   <div class="field">
-    <%= f.label :primary_role %><br />
-    <%= f.collection_select :primary_role_id, PrimaryRole.all, :id, :name %>
+    <b><%= f.label :initiave %> </b>
+    <%= f.text_field :initiative, :size => 3 %>
+  </div>
+  <table cellpadding="5">
+    <tr align="left">
+      <th><%= f.label :armor_class %> </th>
+      <th><%= f.label :fortitude %> </th>
+      <th><%= f.label :reflex %> </th>
+      <th><%= f.label :will %> </th>
+    </tr>
+    <tr>
+      <td><%= f.text_field :armor_class, :size => 3 %> </td>
+      <td><%= f.text_field :fortitude, :size => 3 %> </td>
+      <td><%= f.text_field :reflex, :size => 3 %> </td>
+      <td><%= f.text_field :will, :size => 3 %> </td>
+    </tr>
+  </table>
+<br />
+  <div class="field">
+    <b><%= f.label :perception %> </b>
+    <%= f.text_field :perception, :size => 3 %>
   </div>
   <div class="field">
-    <%= f.label :size %><br />
-    <%= f.select :size, Monster.sizes %>
-  </div>
-  <div class="field">
-    <%= f.label :origin %><br />
-    <%= f.collection_select :origin_id, Origin.all, :id, :name %>
-  </div>
-  <div class="field">
-    <%= f.label :type %><br />
-    <%= f.collection_select :type_id, Type.all, :id, :name %>
-  </div>
-  <div class="field">
-    <%= f.label :race %><br />
-    <%= f.collection_select :race_id, Race.all, :id, :name %>
-  </div>
-  <div class="field">
-    <%= f.label :hit_points %><br />
-    <%= f.text_field :hit_points %>
-  </div>
-  <div class="field">
-    <%= f.label :initiave %><br />
-    <%= f.text_field :initiative %>
-  </div>
-  <div class="field">
-    <%= f.label :armor_class %><br />
-    <%= f.text_field :armor_class %>
-  </div>
-  <div class="field">
-    <%= f.label :fortitude %><br />
-    <%= f.text_field :fortitude %>
-  </div>
-  <div class="field">
-    <%= f.label :reflex %><br />
-    <%= f.text_field :reflex %>
-  </div>
-  <div class="field">
-    <%= f.label :will %><br />
-    <%= f.text_field :will %>
-  </div>
-  <div class="field">
-    <%= f.label :perception %><br />
-    <%= f.text_field :perception %>
-  </div>
-  <div class="field">
-    <%= f.label :speed %><br />
-    <%= f.text_field :speed %>
+    <b><%= f.label :speed %> </b>
+    <%= f.text_field :speed, :size => 3 %>
   </div>
   <div class="field">
     <%= f.label :movement_type %><br />
@@ -82,43 +85,66 @@
     <%= f.label :special_sense %><br />
     <%= f.select :special_sense, Monster.special_senses %>
   </div>
+  <table cellpadding="5">
+    <tr align="left">
+      <th><%= f.label :strength %> </th>
+      <th><%= f.label :dexterity %> </th>
+      <th><%= f.label :wisdom %> </th>
+    </tr>
+    <tr>
+      <td><%= f.text_field :strength, :size => 3 %> </td>
+      <td><%= f.text_field :dexterity, :size => 3 %> </td>
+      <td><%= f.text_field :wisdom, :size => 3 %> </td>
+    </tr>
+    <tr align="left">
+      <th><%= f.label :constitution %> </th>
+      <th><%= f.label :intelligence %> </th>
+      <th><%= f.label :charisma %> </th>
+    </tr>
+    <tr>
+      <td><%= f.text_field :constitution, :size => 3 %> </td>
+      <td><%= f.text_field :intelligence, :size => 3 %> </td>
+      <td><%= f.text_field :charisma, :size => 3 %> </td>
+    </tr>
+  </table>
+<br />
   <div class="field">
-    <%= f.label :strength %><br />
-    <%= f.text_field :strength %>
-  </div>
-  <div class="field">
-    <%= f.label :dexterity %><br />
-    <%= f.text_field :dexterity %>
-  </div>
-  <div class="field">
-     <%= f.label :wisdom %><br />
-     <%= f.text_field :wisdom %>
-  </div>
-  <div class="field">
-    <%= f.label :constitution %><br />
-    <%= f.text_field :constitution %>
-  </div>
-  <div class="field">
-    <%= f.label :intelligence %><br />
-    <%= f.text_field :intelligence %>
-  </div>
-  <div class="field">
-    <%= f.label :charisma %><br />
-    <%= f.text_field :charisma %>
-  </div>
-  <div class="field">
-    <%= f.label :alignment %><br />
+    <b><%= f.label :alignment %></b><br />
     <%= f.select :alignment, Monster.alignment %>
   </div>
   <div class="field">
-    <%= f.label :languages %><br />
+    <b><%= f.label :languages %></b><br />
     <%= f.select :languages, Monster.languages %>
   </div>
   <div class="field">
-    <%= f.label :combat_notes %><br />
+    <b><%= f.label :combat_notes %></b><br />
     <%= f.text_area :combat_notes %>
+  </div>
+  <div class="field">
+    Add Keyword:
+    <select id="keywords">
+      <%= options_from_collection_for_select Keyword.all, :id, :name %>
+    </select><br />
+    <%= f.label :keywords %> : 
+    <!--
+      <span class="keyword">
+        Acid
+        <input type="hidden" name="monster[keywords][4]" value="1">
+      </span>
+    -->
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script type="text/javascript">
+  $(function() {
+    $("span.keyword").click(function(){
+      $(this).remove();
+    });
+    $("#keywords").change(function() {
+      
+    });
+  });
+</script>

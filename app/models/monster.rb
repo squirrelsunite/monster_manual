@@ -20,10 +20,10 @@ class Monster < ActiveRecord::Base
     ["Artillery", "Brute", "Controller", "Lurker", "Skirmisher", "Soldier"]
   end
   def self.special_senses
-    ["None", "Blindsight", "Darkvision", "Low-Light Vision", "Tremorsense"]
+    ["", "Blindsight", "Darkvision", "Low-Light Vision", "Tremorsense"]
   end
   def self.movement_types
-    ["None", "Burrow", "Climb", "Fly", "Swim"]
+    ["", "Burrow", "Climb", "Fly", "Swim"]
   end
   def self.languages
     ["Common", "Abyssal", "Deep Speech", "Draconic", "Dwarven", "Elven", "Giant", "Goblin", "Primordial", "Supernal", "Undercommon"]
