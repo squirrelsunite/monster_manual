@@ -20,3 +20,6 @@ body {
   padding-left: 1em;
   padding-top: 2em;
 }
+span.keyword {
+	margin: 0.5em;
+}

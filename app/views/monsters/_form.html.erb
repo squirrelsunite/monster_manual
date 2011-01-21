@@ -123,15 +123,16 @@
   <div class="field">
     Add Keyword:
     <select id="keywords">
+      <option></option>
       <%= options_from_collection_for_select Keyword.all, :id, :name %>
     </select><br />
     <%= f.label :keywords %> : 
-    <!--
-      <span class="keyword">
-        Acid
-        <input type="hidden" name="monster[keywords][4]" value="1">
-      </span>
-    -->
+    <% @monster.keywords.each do |keyword| %>
+	  <span class="keyword">
+	  <%= keyword.name %>
+	  <input type="hidden" name="keywords[<%= keyword.id %>]" value="1">
+	  </span>
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit %>
@@ -140,11 +141,18 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 <script type="text/javascript">
   $(function() {
-    $("span.keyword").click(function(){
+    $("span.keyword").live("click", function(){
       $(this).remove();
     });
-    $("#keywords").change(function() {
-      
+    $("#keywords").change(function(){
+    	var str = '<span class="keyword">';
+    	var selected = $("#keywords option:selected");
+    	if (!selected.val()) return;
+    	str += selected.text();
+    	str += '<input type="hidden" name="keywords[';
+    	str += selected.val();
+    	str += ']" value="1"></span>';
+    	$(this).parent().append(str);
     });
   });
 </script>

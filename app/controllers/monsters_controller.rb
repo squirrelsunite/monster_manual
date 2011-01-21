@@ -57,6 +57,11 @@ class MonstersController < ApplicationController
   # PUT /monsters/1.xml
   def update
     @monster = Monster.find(params[:id])
+    if params[:keywords]
+			@monster.keywords = Keyword.find(params[:keywords].keys)
+		else 
+			@monster.keywords = []
+		end
 
     respond_to do |format|
       if @monster.update_attributes(params[:monster])

@@ -1,8 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
-  <%= @monster.name %>
+  <b><%= @monster.name %></b>
 </p>
 
 <p>
@@ -10,68 +9,32 @@
 </p>
 
 <p>
-  <b>Level:</b>
-  <%= @monster.level %>
-</p>
-
-<p>
-  <b>Role:</b>
-  <%= link_to @monster.primary_role.name, @monster.primary_role %>
+  Level <%= @monster.level %> <%= link_to @monster.primary_role.name, @monster.primary_role %>
 </p>
   
 <p>
-  <b>Size:</b>
-  <%= @monster.size %>
+  <%= @monster.size %> <%= link_to @monster.origin.name, @monster.origin %> <%= link_to @monster.type.name, @monster.type %> <%= link_to @monster.race.name, @monster.race %>
 </p>
 
 <p>
-  <b>Origin:</b>
-  <%= link_to @monster.origin.name, @monster.origin %>
+  <b>Hit points:</b> <%= @monster.hit_points %> / Bloodied: <%= @monster.bloodied %>
 </p>
 
 <p>
-  <b>Type:</b>
-  <%= link_to @monster.type.name, @monster.type %>
-</p>
-
-<p>
-  <b>Race:</b>
-  <%= link_to @monster.race.name, @monster.race %>
-</p>
-
-<p>
-  <b>Hit points:</b>
-  <%= @monster.hit_points %>
-</p>
-
-<p>
-  <b>Bloodied:</b>
-  <%= @monster.bloodied %>
+  <b>Defences</b>
+<br />
+  AC: <%= @monster.armor_class %>
+<br />
+  Fort: <%= @monster.fortitude %>
+<br />
+  Ref: <%= @monster.reflex %>
+<br />
+  Will: <%= @monster.will %>
 </p>
 
 <p>
   <b>Initiative:</b>
   <%= @monster.initiative %>
-</p>
-
-<p>
-  <b>Armor class:</b>
-  <%= @monster.armor_class %>
-</p>
-
-<p>
-  <b>Fortitude:</b>
-  <%= @monster.fortitude %>
-</p>
-
-<p>
-  <b>Reflex:</b>
-  <%= @monster.reflex %>
-</p>
-
-<p>
-  <b>Will:</b>
-  <%= @monster.will %>
 </p>
 
 <p>
@@ -90,35 +53,11 @@
 </p>
 
 <p>
-  <b>Strength:</b>
-  <%= @monster.strength %>
-</p>
-
-<p>
-  <b>Dexterity:</b>
-  <%= @monster.dexterity %>
-</p>
-
-<p>
-  <b>Wisdom:</b>
-  <%= @monster.wisdom %>
-</p>
-
-<p>
-  <b>Constitution:</b>
-  <%= @monster.constitution %>
-</p>
-
-<p>
-  <b>Intelligence:</b>
-  <%= @monster.intelligence %>
-</p>
-
-<p>
-  <b>Charisma:</b>
-  <%= @monster.charisma %>
-</p>
-
+  <b>Ability Scores</b>
+<br />
+  STR: <%= @monster.strength %> DEX: <%= @monster.dexterity %> WIS: <%= @monster.wisdom %>
+<br />
+  CON: <%= @monster.constitution %> INT: <%= @monster.intelligence %> CHA: <%= @monster.charisma %>
 <p>
   <b><%= @monster.name.pluralize %> in Combat:</b>
   <%= @monster.combat_notes %>
