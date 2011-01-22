@@ -9,15 +9,23 @@
 </p>
 
 <p>
-  Level <%= @monster.level %> <%= link_to @monster.primary_role.name, @monster.primary_role %>
-</p>
-  
-<p>
-  <%= @monster.size %> <%= link_to @monster.origin.name, @monster.origin %> <%= link_to @monster.type.name, @monster.type %> <%= link_to @monster.race.name, @monster.race %>
+  Level <%= @monster.level %> 
+  <%= link_to @monster.primary_role.name, @monster.primary_role %>
 </p>
 
 <p>
-  <b>Hit points:</b> <%= @monster.hit_points %> / Bloodied: <%= @monster.bloodied %>
+  <%= @monster.size %> 
+  <%= link_to @monster.origin.name, @monster.origin %> 
+  <%= link_to @monster.type.name, @monster.type %> 
+  <%= link_to @monster.race.name, @monster.race %>
+  <% @monster.keywords.each do |keyword| %>
+	  (<span class="keyword"><%= link_to keyword.name, keyword %></span>)
+	<% end %>
+</p>
+
+<p>
+  <b>Hit points:</b> <%= @monster.hit_points %> / 
+  Bloodied: <%= @monster.bloodied %>
 </p>
 
 <p>
@@ -46,19 +54,28 @@
   <b>Speed:</b>
   <%= @monster.speed %>
 </p>
-
-<p>
-  <b>Special Senses:</b>
-  <%= @monster.special_sense %>
-</p>
-
+<% if params[:special_senses] %>
+	<p>
+  	<b>Special Senses:</b>
+  	<%= @monster.special_sense %>
+	</p>
+<% end %>
 <p>
   <b>Ability Scores</b>
 <br />
-  STR: <%= @monster.strength %> DEX: <%= @monster.dexterity %> WIS: <%= @monster.wisdom %>
+  STR: <%= @monster.strength %> (<%= @monster.modifier(:strength) %>) 
+  DEX: <%= @monster.dexterity %> (<%= @monster.modifier(:dexterity) %>) 
+  WIS: <%= @monster.wisdom %> (<%= @monster.modifier(:wisdom) %>) 
 <br />
-  CON: <%= @monster.constitution %> INT: <%= @monster.intelligence %> CHA: <%= @monster.charisma %>
+  CON: <%= @monster.constitution %> (<%= @monster.modifier(:constitution) %>) 
+  INT: <%= @monster.intelligence %> (<%= @monster.modifier(:intelligence) %>) 
+  CHA: <%= @monster.charisma %> (<%= @monster.modifier(:charisma) %>) 
 <p>
+	<b>Alignment: </b>
+	<%= @monster.alignment %> 
+	<b>Languages: </b>
+	<%= @monster.languages %>
+</p>
   <b><%= @monster.name.pluralize %> in Combat:</b>
   <%= @monster.combat_notes %>
 </p>

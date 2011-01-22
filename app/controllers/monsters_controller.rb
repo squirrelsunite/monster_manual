@@ -42,6 +42,12 @@ class MonstersController < ApplicationController
   def create
     @monster = Monster.new(params[:monster])
 
+		if params[:keywords]
+			@monster.keywords = Keyword.find(params[:keywords].keys)
+		else 
+			@monster.keywords = []
+		end
+		
     respond_to do |format|
       if @monster.save
         format.html { redirect_to(monsters_path, :notice => 'Monster was successfully created.') }

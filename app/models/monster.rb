@@ -13,6 +13,9 @@ class Monster < ActiveRecord::Base
   def bloodied
     hit_points / 2
   end
+  def modifier(ability)
+  	(self[ability] - 10) / 2 + (level / 2)
+	end
   def self.sizes
     ["Tiny", "Small", "Medium", "Large", "Huge", "Gargantuan"]
   end
@@ -20,15 +23,15 @@ class Monster < ActiveRecord::Base
     ["Artillery", "Brute", "Controller", "Lurker", "Skirmisher", "Soldier"]
   end
   def self.special_senses
-    ["", "Blindsight", "Darkvision", "Low-Light Vision", "Tremorsense"]
+    [nil, "Blindsight", "Darkvision", "Low-Light Vision", "Tremorsense"]
   end
   def self.movement_types
-    ["", "Burrow", "Climb", "Fly", "Swim"]
+    [nil, "Burrow", "Climb", "Fly", "Swim"]
   end
   def self.languages
-    ["Common", "Abyssal", "Deep Speech", "Draconic", "Dwarven", "Elven", "Giant", "Goblin", "Primordial", "Supernal", "Undercommon"]
+    ["Common", "Abyssal", "Deep Speech", "Draconic", "Dwarven", "Elven", "Giant", "Goblin", "Primordial", "Supernal", "Undercommon", "None"]
   end
-  def self.alignment
+  def self.alignments
     ["Lawful Good", "Good", "Unaligned", "Evil", "Chaotic Evil"]
   end
 end
