@@ -19,7 +19,7 @@
   <%= link_to @monster.type.name, @monster.type %> 
   <%= link_to @monster.race.name, @monster.race %>
   <% @monster.keywords.each do |keyword| %>
-	  (<span class="keyword"><%= link_to keyword.name, keyword %></span>)
+	  <span>(<%= link_to keyword.name, keyword %>)</span>
 	<% end %>
 </p>
 
@@ -42,12 +42,12 @@
 
 <p>
   <b>Initiative:</b>
-  <%= @monster.initiative %>
+  <%= @monster.initiative.to_signed_s %>
 </p>
 
 <p>
   <b>Perception:</b>
-  <%= @monster.perception %>
+  <%= @monster.perception.to_signed_s %>
 </p>
 
 <p>
@@ -63,13 +63,13 @@
 <p>
   <b>Ability Scores</b>
 <br />
-  STR: <%= @monster.strength %> (<%= @monster.modifier(:strength) %>) 
-  DEX: <%= @monster.dexterity %> (<%= @monster.modifier(:dexterity) %>) 
-  WIS: <%= @monster.wisdom %> (<%= @monster.modifier(:wisdom) %>) 
+  STR: <%= stat @monster, :strength %>
+  DEX: <%= stat @monster, :dexterity %>
+  WIS: <%= stat @monster, :wisdom %> 
 <br />
-  CON: <%= @monster.constitution %> (<%= @monster.modifier(:constitution) %>) 
-  INT: <%= @monster.intelligence %> (<%= @monster.modifier(:intelligence) %>) 
-  CHA: <%= @monster.charisma %> (<%= @monster.modifier(:charisma) %>) 
+  CON: <%= stat @monster, :constitution %> 
+  INT: <%= stat @monster, :intelligence %> 
+  CHA: <%= stat @monster, :charisma %> 
 <p>
 	<b>Alignment: </b>
 	<%= @monster.alignment %> 
@@ -82,5 +82,6 @@
 
 <%= link_to 'Index', monsters_path %> |
 <%= link_to 'Edit', edit_monster_path(@monster) %> |
+<%= link_to 'Copy', copy_monster_path(@monster) %> |
 <%= link_to 'Delete', @monster, :confirm => 'Are you sure?', :method => :delete %>
 

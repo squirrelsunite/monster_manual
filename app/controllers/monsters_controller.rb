@@ -32,6 +32,13 @@ class MonstersController < ApplicationController
     end
   end
 
+	def copy
+		original = Monster.find(params[:id])
+		@monster = original.clone
+		@monster.keywords = original.keywords
+		render :action => :new
+	end
+		
   # GET /monsters/1/edit
   def edit
     @monster = Monster.find(params[:id])
@@ -71,7 +78,7 @@ class MonstersController < ApplicationController
 
     respond_to do |format|
       if @monster.update_attributes(params[:monster])
-        format.html { redirect_to(@monster, :notice => 'Monster was successfully updated.') }
+        format.html { redirect_to(monsters_path, :notice => 'Monster was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -91,4 +98,5 @@ class MonstersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
 end

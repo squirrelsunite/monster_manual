@@ -7,8 +7,14 @@ MonsterManual::Application.routes.draw do
 
   resources :types
 
-  resources :monsters
+  resources :monsters do
+  	get :copy, :on => :member
+  end
+  
   resources :origins
+  
+  
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

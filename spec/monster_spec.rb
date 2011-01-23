@@ -25,4 +25,16 @@ describe Monster do
       Keyword.first.monsters.first.should == @monster
     end
   end
+	describe "modifier" do
+		before do
+			@monster.level = 3
+			@monster.strength = 15
+			@monster.dexterity = 11
+			@monster.intelligence = 6
+		end
+		specify {@monster.modifier(:strength).should == 3}
+		specify {@monster.modifier(:dexterity).should == 1}
+		specify {@monster.modifier(:intelligence).should == -1}
+	end
 end
+
