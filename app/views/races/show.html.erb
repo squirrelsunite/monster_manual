@@ -4,7 +4,7 @@
 
 <p><%= @race.description %></p>
 
-<p><b><%= @race.skill%> DC <%= @race.difficulty%>: </b><%= @race.lore %></p>
+<p><b><%= @race.skill.to_s.capitalize %> DC <%= @race.difficulty%>: </b><%= @race.lore %></p>
 
 <p><b>Encounters: </b><%= @race.encounters %></p>
 

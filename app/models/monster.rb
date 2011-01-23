@@ -1,4 +1,5 @@
 class Monster < ActiveRecord::Base
+	has_many :skills
   belongs_to :primary_role
   belongs_to :race
   belongs_to :type
@@ -33,5 +34,18 @@ class Monster < ActiveRecord::Base
   end
   def self.alignments
     ["Lawful Good", "Good", "Unaligned", "Evil", "Chaotic Evil"]
+  end
+  def skill(name)
+  	skills.where(:name => name).first
+  end
+  def update_skills(skills)
+  	skills.each do |name, score|
+  		skill = self.skill(name)
+  		if skill
+  			skill.update_attributes! :score => score
+  		else
+  			self.skills << Skill.new(:name => name, :score => score)
+  		end
+  	end
   end
 end

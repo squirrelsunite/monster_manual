@@ -48,7 +48,7 @@ class MonstersController < ApplicationController
   # POST /monsters.xml
   def create
     @monster = Monster.new(params[:monster])
-
+    @monster.update_skills(params[:skills])
 		if params[:keywords]
 			@monster.keywords = Keyword.find(params[:keywords].keys)
 		else 
@@ -70,6 +70,7 @@ class MonstersController < ApplicationController
   # PUT /monsters/1.xml
   def update
     @monster = Monster.find(params[:id])
+    @monster.update_skills(params[:skills])
     if params[:keywords]
 			@monster.keywords = Keyword.find(params[:keywords].keys)
 		else 

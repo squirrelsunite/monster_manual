@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :skill %><br />
-    <%= f.select :skill, Race.skills %>
+    <%= f.select :skill, capitalized_choices(Skill.skills) %>
   </div>
   <div class="field">
     <%= f.label :difficulty %> 

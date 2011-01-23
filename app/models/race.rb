@@ -5,7 +5,4 @@ class Race < ActiveRecord::Base
   def to_s
     name
   end
-  def self.skills
-    ["Acrobatics", "Arcana", "Athletics", "Bluff", "Diplomacy", "Dungeoneering", "Endurance", "Heal", "History", "Insight", "Intimidate", "Nature", "Perception", "Religion", "Stealth", "Streetwise", "Thievery"]
-  end
 end

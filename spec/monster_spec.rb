@@ -32,9 +32,19 @@ describe Monster do
 			@monster.dexterity = 11
 			@monster.intelligence = 6
 		end
-		specify {@monster.modifier(:strength).should == 3}
-		specify {@monster.modifier(:dexterity).should == 1}
-		specify {@monster.modifier(:intelligence).should == -1}
+		specify { @monster.modifier(:strength).should == 3}
+		specify { @monster.modifier(:dexterity).should == 1}
+		specify { @monster.modifier(:intelligence).should == -1}
+	end
+	describe "skills" do
+		before do
+			@monster.skills << Skill.new(:name => :stealth, :score => 7)
+			@monster.update_skills :nature => 5
+			@monster.save!
+		end
+		specify { @monster.skill(:stealth).score.should == 7 }
+		specify { @monster.skill(:nature).score.should == 5 }
+		specify { @monster.skill(:religion).should be_nil }
 	end
 end
 
