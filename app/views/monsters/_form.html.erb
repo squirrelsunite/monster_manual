@@ -47,12 +47,12 @@
   </table>
 <br />
 <div class="field">
-    Add Keyword:
+    Add Keywords
     <select id="keywords">
       <option></option>
-      <%= options_from_collection_for_select Keyword.all, :id, :name %>
+      <%= options_from_collection_for_select Keyword.creature, :id, :name %>
     </select><br />
-    <%= f.label :keywords %> : 
+    <%= f.label :keywords %>  
     <% @monster.keywords.each do |keyword| %>
 	  <span class="keyword">
 	  <%= keyword.name %>
@@ -123,14 +123,13 @@
     </tr>
   </table>
 <br />
-	<h2>Skills</h2>
-	<div>
+<b>Skills</b>
+	<table>
 		<% Skill.skills.each do |skill| %>
-			<%= f.label skill %>
-			<%= text_field_tag "skills[#{skill}]", @monster.skill(skill) %>
-			<br />
+			<tr><td><%= f.label skill %></td>
+			<td><%= text_field_tag "skills[#{skill}]", @monster.skill(skill), :size => 3 %></td></tr>
 		<% end %>
-	</div>
+	</table>
 <br />
   <div class="field">
     <b><%= f.label :alignment %></b><br />

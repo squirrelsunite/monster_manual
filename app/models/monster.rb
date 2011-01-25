@@ -1,5 +1,6 @@
 class Monster < ActiveRecord::Base
 	has_many :skills
+	has_many :movements
   belongs_to :primary_role
   belongs_to :race
   belongs_to :type
@@ -25,9 +26,6 @@ class Monster < ActiveRecord::Base
   end
   def self.special_senses
     [nil, "Blindsight", "Darkvision", "Low-Light Vision", "Tremorsense"]
-  end
-  def self.movement_types
-    [nil, "Burrow", "Climb", "Fly", "Swim"]
   end
   def self.languages
     ["Common", "Abyssal", "Deep Speech", "Draconic", "Dwarven", "Elven", "Giant", "Goblin", "Primordial", "Supernal", "Undercommon", "None"]

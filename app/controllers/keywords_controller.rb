@@ -60,7 +60,7 @@ class KeywordsController < ApplicationController
 
     respond_to do |format|
       if @keyword.update_attributes(params[:keyword])
-        format.html { redirect_to(@keyword, :notice => 'Keyword was successfully updated.') }
+        format.html { redirect_to(keywords_path, :notice => 'Keyword was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

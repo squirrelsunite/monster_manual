@@ -10,13 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110123015853) do
+ActiveRecord::Schema.define(:version => 20110125025829) do
 
   create_table "keywords", :force => true do |t|
     t.string   "name"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "category"
   end
 
   create_table "keywords_monsters", :id => false, :force => true do |t|
@@ -52,9 +53,17 @@ ActiveRecord::Schema.define(:version => 20110123015853) do
     t.integer  "primary_role_id"
     t.text     "combat_notes"
     t.text     "description"
-    t.string   "movement_type"
     t.string   "alignment"
     t.string   "languages"
+  end
+
+  create_table "movements", :force => true do |t|
+    t.string   "movement_type"
+    t.integer  "speed"
+    t.integer  "monster_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "type"
   end
 
   create_table "origins", :force => true do |t|

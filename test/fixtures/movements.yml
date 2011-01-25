@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  movement_type: MyString
+  speed: 1
+  monster: 
+
+two:
+  movement_type: MyString
+  speed: 1
+  monster: 

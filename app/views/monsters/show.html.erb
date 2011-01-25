@@ -70,12 +70,21 @@
   CON: <%= stat @monster, :constitution %> 
   INT: <%= stat @monster, :intelligence %> 
   CHA: <%= stat @monster, :charisma %> 
+</p>
+<b>Skills</b>
+<br />
+<table>
+	<% @monster.skills.each do |skill| %>
+		<tr><td><%= skill.name.capitalize %>:</td><td><%= skill.score_or_default.to_signed_s %></td></tr>
+	<% end %>
+</table>
 <p>
 	<b>Alignment: </b>
 	<%= @monster.alignment %> 
 	<b>Languages: </b>
 	<%= @monster.languages %>
 </p>
+<p>
   <b><%= @monster.name.pluralize %> in Combat:</b>
   <%= @monster.combat_notes %>
 </p>

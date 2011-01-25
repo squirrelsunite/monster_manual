@@ -44,10 +44,10 @@ origin
   name
   description
   
-speed
-  movement_type
-  value
-  **Attributes such as clumsy, earth walk?
+==speed
+  ==movement_type
+  ==value
+  ==**Attributes such as clumsy, earth walk?
   
 race
   name
