@@ -3,7 +3,7 @@ class Keyword < ActiveRecord::Base
   default_scope :order => "name"
 
 	def self.categories
-		["Damage", "Creature", "Effect"]
+		["Damage", "Creature", "Effect", "Accessory"].sort
 	end
 
 	categories.each do |category|

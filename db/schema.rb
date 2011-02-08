@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110125025829) do
+ActiveRecord::Schema.define(:version => 20110126015235) do
 
   create_table "keywords", :force => true do |t|
     t.string   "name"
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(:version => 20110125025829) do
   end
 
   create_table "movements", :force => true do |t|
-    t.string   "movement_type"
+    t.string   "name"
     t.integer  "speed"
     t.integer  "monster_id"
     t.datetime "created_at"

@@ -1,7 +1,7 @@
 class MovementMode < Movement
 
 	def self.names
-		["Clumsy", "Earth Walk"]
+		["Phasing", "Earth Walk", "Forest Walk", "Ice Walk", "Swamp Walk", "Tunnelling", "Spider Climb", "Clumsy", "Hover"].sort
 	end
 	
 end

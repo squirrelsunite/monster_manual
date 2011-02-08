@@ -93,9 +93,12 @@
     <%= f.text_field :speed, :size => 3 %>
   </div>
   <div class="field">
-    <%= f.label :movement_type %><br />
-    <%= f.select :movement_type, Monster.movement_types %>
-  </div>
+		<button type="button" id="show_movements">Special Movement</button>
+	</div>
+	<div id="movements">
+		<%= render "movements" %>
+	</div>
+	<br />
   <div class="field">
     <%= f.label :special_sense %><br />
     <%= f.select :special_sense, Monster.special_senses %>
@@ -164,4 +167,9 @@
     	$(this).parent().append(str);
     });
   });
+ 	$(function() {
+  	var movements = $("#movements");
+   	movements.hide();
+   	$("#show_movements").click(function() { movements.show(); });
+ 	});
 </script>

@@ -46,4 +46,19 @@ class Monster < ActiveRecord::Base
   		end
   	end
   end
+  def movement(name)
+  	movements.where(:name => name).first
+  end
+  def update_movements(movements)
+  	movements.each do |name, score|
+  		movement = self.movement(name)
+  		if movement
+  			movement.update_attributes! :movement => movement
+  		else
+  			self.movement << Movement.new(:name => name, :score => score)
+  		end
+  	end
+  end
+
+  		
 end

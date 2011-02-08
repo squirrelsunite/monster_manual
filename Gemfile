@@ -7,4 +7,5 @@ group :test do
   gem 'cucumber-rails'
   gem 'rspec-rails'
   gem 'capybara'
+#  gem 'autotest'
 end
