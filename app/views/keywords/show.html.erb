@@ -4,6 +4,15 @@
 
 <p><%= @keyword.description %></p>
 
+<% if @keyword.monsters.any?%>
+  <h4>Monsters</h4>
+  <ul>
+    <% @keyword.monsters.each do |monster| %>
+      <li><%= link_to monster.name, monster %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= link_to 'Index', keywords_path %> |
 <%= link_to 'Edit', edit_keyword_path(@keyword) %> |
 <%= link_to 'Delete', @keyword, :confirm => 'Are you sure?', :method => :delete %>
