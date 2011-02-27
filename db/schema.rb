@@ -10,7 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110126015235) do
+ActiveRecord::Schema.define(:version => 20110226215936) do
+
+  create_table "creatures", :force => true do |t|
+    t.string   "name"
+    t.integer  "hit_points"
+    t.integer  "initiative"
+    t.integer  "monster_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "keywords", :force => true do |t|
     t.string   "name"

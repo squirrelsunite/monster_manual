@@ -12,4 +12,5 @@ Factory.define :monster do |monster|
   monster.reflex rand(20)
   monster.fortitude rand(20)
   monster.level rand(20)
+  monster.initiative rand(20)
 end

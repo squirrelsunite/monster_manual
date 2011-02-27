@@ -1,4 +1,6 @@
 MonsterManual::Application.routes.draw do
+  resources :creatures
+
   resources :keywords
 
   resources :primary_roles

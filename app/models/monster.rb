@@ -1,6 +1,7 @@
 class Monster < ActiveRecord::Base
 	has_many :skills
 	has_many :movements
+	has_many :creatures
   belongs_to :primary_role
   belongs_to :race
   belongs_to :type
