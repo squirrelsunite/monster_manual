@@ -1,0 +1,55 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  source: MyString
+  power_type: MyString
+  level: 1
+  flavor_text: MyText
+  usage: MyString
+  action_type: MyString
+  trigger: MyText
+  attack_type: MyString
+  attack_range: MyString
+  attack_range_value: 1
+  area_range_value: 1
+  prerequisite: MyText
+  requirement: MyText
+  target: MyText
+  attack_ability: MyString
+  attack_modifier: 1
+  attack_defense: MyString
+  hit: MyText
+  miss: MyText
+  effect: MyText
+  sustain_usage: MyString
+  sustain_effect: MyText
+  power_special: MyText
+  type: MyString
+
+two:
+  name: MyString
+  source: MyString
+  power_type: MyString
+  level: 1
+  flavor_text: MyText
+  usage: MyString
+  action_type: MyString
+  trigger: MyText
+  attack_type: MyString
+  attack_range: MyString
+  attack_range_value: 1
+  area_range_value: 1
+  prerequisite: MyText
+  requirement: MyText
+  target: MyText
+  attack_ability: MyString
+  attack_modifier: 1
+  attack_defense: MyString
+  hit: MyText
+  miss: MyText
+  effect: MyText
+  sustain_usage: MyString
+  sustain_effect: MyText
+  power_special: MyText
+  type: MyString

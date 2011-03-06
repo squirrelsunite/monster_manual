@@ -10,13 +10,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110226215936) do
+ActiveRecord::Schema.define(:version => 20110306211742) do
 
   create_table "creatures", :force => true do |t|
     t.string   "name"
     t.integer  "hit_points"
     t.integer  "initiative"
     t.integer  "monster_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "encounters", :force => true do |t|
+    t.string   "name"
+    t.boolean  "active"
+    t.integer  "original_encounter_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -78,6 +86,36 @@ ActiveRecord::Schema.define(:version => 20110226215936) do
   create_table "origins", :force => true do |t|
     t.string   "name"
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "powers", :force => true do |t|
+    t.string   "name"
+    t.string   "source"
+    t.string   "power_type"
+    t.integer  "level"
+    t.text     "flavor_text"
+    t.string   "usage"
+    t.string   "action_type"
+    t.text     "trigger"
+    t.string   "attack_type"
+    t.string   "attack_range"
+    t.integer  "attack_range_value"
+    t.integer  "area_range_value"
+    t.text     "prerequisite"
+    t.text     "requirement"
+    t.text     "target"
+    t.string   "attack_ability"
+    t.integer  "attack_modifier"
+    t.string   "defense"
+    t.text     "hit"
+    t.text     "miss"
+    t.text     "effect"
+    t.string   "sustain_action_type"
+    t.text     "sustain_effect"
+    t.text     "power_special"
+    t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

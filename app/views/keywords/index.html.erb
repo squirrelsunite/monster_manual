@@ -2,6 +2,8 @@
 
 <%= link_to 'New Keyword', new_keyword_path %>
 
+
+
 <% @keywords.each do |keyword| %>
 <p><b><%= keyword.name %></b></p> 
 <p><%= truncate keyword.description, :length => 50 %></p>

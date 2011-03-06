@@ -1,0 +1,69 @@
+<h1>Listing powers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Source</th>
+    <th>Power type</th>
+    <th>Level</th>
+    <th>Flavor text</th>
+    <th>Usage</th>
+    <th>Action type</th>
+    <th>Trigger</th>
+    <th>Attack type</th>
+    <th>Attack range</th>
+    <th>Attack range value</th>
+    <th>Area range value</th>
+    <th>Prerequisite</th>
+    <th>Requirement</th>
+    <th>Target</th>
+    <th>Attack ability</th>
+    <th>Attack modifier</th>
+    <th>Defense</th>
+    <th>Hit</th>
+    <th>Miss</th>
+    <th>Effect</th>
+    <th>Sustain action type</th>
+    <th>Sustain effect</th>
+    <th>Power special</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @powers.each do |power| %>
+  <tr>
+    <td><%= power.name %></td>
+    <td><%= power.source %></td>
+    <td><%= power.power_type %></td>
+    <td><%= power.level %></td>
+    <td><%= power.flavor_text %></td>
+    <td><%= power.usage %></td>
+    <td><%= power.action_type %></td>
+    <td><%= power.trigger %></td>
+    <td><%= power.attack_type %></td>
+    <td><%= power.attack_range %></td>
+    <td><%= power.attack_range_value %></td>
+    <td><%= power.area_range_value %></td>
+    <td><%= power.prerequisite %></td>
+    <td><%= power.requirement %></td>
+    <td><%= power.target %></td>
+    <td><%= power.attack_ability %></td>
+    <td><%= power.attack_modifier %></td>
+    <td><%= power.defense %></td>
+    <td><%= power.hit %></td>
+    <td><%= power.miss %></td>
+    <td><%= power.effect %></td>
+    <td><%= power.sustain_action_type %></td>
+    <td><%= power.sustain_effect %></td>
+    <td><%= power.power_special %></td>
+    <td><%= link_to 'Show', power %></td>
+    <td><%= link_to 'Edit', edit_power_path(power) %></td>
+    <td><%= link_to 'Destroy', power, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Power', new_power_path %>

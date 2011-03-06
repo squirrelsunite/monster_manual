@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  hit_points: 1
+  initiative: 1
+  monster_id: 1
+
+two:
+  name: MyString
+  hit_points: 1
+  initiative: 1
+  monster_id: 1

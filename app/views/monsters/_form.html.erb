@@ -18,8 +18,8 @@
   <div class="field">
     <b><%= f.label :description %></b><br />
     <%= f.text_area :description %>
-<br />
-<br />
+  </div>
+  <br />
   <table cellpadding="5">
     <tr>
       <th><%= f.label :level %> </th>
@@ -30,7 +30,7 @@
       <td><%= f.collection_select :primary_role_id, PrimaryRole.all, :id, :name %> </td>
     </tr>
   </table>
-<br />
+  <br />
   <table cellpadding="5">
     <tr>
       <th><%= f.label :size %> </th>
@@ -45,8 +45,8 @@
       <td><%= f.collection_select :race_id, Race.all, :id, :name %> </td>
     </tr>
   </table>
-<br />
-<div class="field">
+  <br />
+  <div class="field">
     Add Keywords
     <select id="keywords">
       <option></option>
@@ -60,7 +60,7 @@
 	  </span>
     <% end %>
   </div>
-<br />
+  <br />
   <div class="field">
     <b><%= f.label :hit_points %> </b>
     <%= f.text_field :hit_points, :size => 8 %>
@@ -83,7 +83,7 @@
       <td><%= f.text_field :will, :size => 3 %> </td>
     </tr>
   </table>
-<br />
+  <br />
   <div class="field">
     <b><%= f.label :perception %> </b>
     <%= f.text_field :perception, :size => 3 %>
@@ -125,15 +125,15 @@
       <td><%= f.text_field :charisma, :size => 3 %> </td>
     </tr>
   </table>
-<br />
-<b>Skills</b>
+  <br />
+  <b>Skills</b>
 	<table>
 		<% Skill.skills.each do |skill| %>
 			<tr><td><%= f.label skill %></td>
 			<td><%= text_field_tag "skills[#{skill}]", @monster.skill(skill), :size => 3 %></td></tr>
 		<% end %>
 	</table>
-<br />
+  <br />
   <div class="field">
     <b><%= f.label :alignment %></b><br />
     <%= f.select :alignment, Monster.alignments %>

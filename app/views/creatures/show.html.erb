@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @creature.name %>
+</p>
+
+<p>
+  <b>Hit points:</b>
+  <%= @creature.hit_points %>
+</p>
+
+<p>
+  <b>Initiative:</b>
+  <%= @creature.initiative %>
+</p>
+
+<p>
+  <b>Monster:</b>
+  <%= @creature.monster_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_creature_path(@creature) %> |
+<%= link_to 'Back', creatures_path %>

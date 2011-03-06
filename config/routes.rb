@@ -1,4 +1,8 @@
 MonsterManual::Application.routes.draw do
+  resources :powers
+
+  resources :encounters
+
   resources :creatures
 
   resources :keywords
