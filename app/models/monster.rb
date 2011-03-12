@@ -35,7 +35,9 @@ class Monster < ActiveRecord::Base
     ["Lawful Good", "Good", "Unaligned", "Evil", "Chaotic Evil"]
   end
   def skill(name)
-  	skills.where(:name => name).first
+  	skills.to_a.find do |skill|
+  	  skill.name == name
+  	end
   end
   def update_skills(skills)
   	skills.each do |name, score|
@@ -48,6 +50,25 @@ class Monster < ActiveRecord::Base
   	end
   end
   def movement(name)
-  	movements.where("name" => name).first
+  	movements.to_a.find do |movement|
+  	  movement.name == name
+  	end 
+  end
+  def update_movements(movements)
+    self.movements.destroy_all
+    update_movement_modes movements[:mode] || {}
+    update_movement_types movements[:type] || {}
+  end
+  def update_movement_modes(modes)
+    modes.each do |name, checked|
+      next unless checked == 'true'
+      self.movements << MovementMode.new(:name => name)
+    end
+  end
+  def update_movement_types(types)
+    types.each do |name, value|
+      next unless value.present?
+      self.movements << MovementType.new(:name => name, :speed => value)
+    end
   end
 end

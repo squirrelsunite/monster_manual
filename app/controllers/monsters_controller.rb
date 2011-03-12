@@ -49,6 +49,7 @@ class MonstersController < ApplicationController
   def create
     @monster = Monster.new(params[:monster])
     @monster.update_skills(params[:skills])
+    @monster.update_movements(params[:movements])
 		if params[:keywords]
 			@monster.keywords = Keyword.find(params[:keywords].keys)
 		else 
@@ -71,6 +72,7 @@ class MonstersController < ApplicationController
   def update
     @monster = Monster.find(params[:id])
     @monster.update_skills(params[:skills])
+    @monster.update_movements(params[:movements])
     if params[:keywords]
 			@monster.keywords = Keyword.find(params[:keywords].keys)
 		else 

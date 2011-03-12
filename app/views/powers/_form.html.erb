@@ -107,16 +107,15 @@
     <%= f.submit %>
   </div>
 <% end %>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 <script type="text/javascript">
   $(function() {
   	var attack_options = $("#attack_options");
    	attack_options.hide();
-   	$("#show_attack_options").click(function() { attack_options.show(); });
+   	$("#show_attack_options").click(function() { attack_options.toggle(); });
  	});
  	$(function() {
   	var sustained_options = $("#sustained_options");
    	sustained_options.hide();
-   	$("#show_sustained_options").click(function() { sustained_options.show(); });
+   	$("#show_sustained_options").click(function() { sustained_options.toggle(); });
  	});
 </script>

@@ -2,15 +2,18 @@
 <table border="1"><tr><td>
 	<table>
 		<% MovementMode.names.each do |name| %>
-			<tr><td><%= check_box_tag name %></td>
-			<td><%= label :movement, name %></td></tr>
-		<% end %>
+      <tr>
+        <% checked = @monster.movement(name).present? %>
+        <td><%= check_box_tag "movements[mode][#{name}]", 'true', checked %></td>
+        <td><%= label :movement, name %></td>
+      </tr>
+    <% end %>
 	</table>
 	</td><td>
 	<table>
 		<% MovementType.names.each do |name| %>
 			<tr><td><%= label :movement, name %></td>
-			<td><%= text_field_tag "movement_types[#{name}]", @monster.movement(name).try(:speed), :size => 3 %></td></tr>
+			<td><%= text_field_tag "movements[type][#{name}]", @monster.movement(name).try(:speed), :size => 3 %></td></tr>
 		<% end %>
 	</table>
 </td></tr></table>

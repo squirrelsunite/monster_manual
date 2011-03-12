@@ -5,7 +5,7 @@ class Power < ActiveRecord::Base
   end
   
   def self.power_types
-    ['attack', 'utility', 'item', 'feat', 'racial']
+    ['Attack', 'Utility', 'Item', 'Feat', 'Racial']
   end
   
   def self.usages
@@ -13,7 +13,7 @@ class Power < ActiveRecord::Base
   end
   
   def self.action_types
-    [nil, 'standard action', 'move action', 'minor action', 'free action', 'immediate reaction', 'immediate interrupt', 'no action']
+    [nil, 'Standard Action', 'Move Action', 'Minor Action', 'Free Action', 'Immediate Reaction', 'Immediate Interrupt', 'No Action']
   end
   
   def self.attack_types
@@ -21,7 +21,7 @@ class Power < ActiveRecord::Base
   end
   
   def self.attack_ranges
-    [nil, 'weapon', 'adjacent', 'touch', 'sight', 'burst', 'blast', 'wall']
+    [nil, 'Weapon', 'Adjacent', 'Touch', 'Sight', 'Burst', 'Blast', 'Wall']
   end
   
   def self.attack_abilities

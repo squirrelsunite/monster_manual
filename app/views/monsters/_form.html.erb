@@ -150,9 +150,9 @@
     <%= f.submit %>
   </div>
 <% end %>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 <script type="text/javascript">
-  $(function() {
+  console.log($);
+  $(document).ready(function() {
     $("span.keyword").live("click", function(){
       $(this).remove();
     });
@@ -166,10 +166,8 @@
     	str += ']" value="1"></span>';
     	$(this).parent().append(str);
     });
-  });
- 	$(function() {
   	var movements = $("#movements");
    	movements.hide();
-   	$("#show_movements").click(function() { movements.show(); });
+   	$("#show_movements").click(function() { movements.toggle(); });
  	});
 </script>
